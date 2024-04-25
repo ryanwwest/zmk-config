@@ -32,16 +32,14 @@ combos {
   COMBO(semicolon,   &kp SEMICOLON,      17 19, ALL_LAYERS, COMBO_TERM_NORMAL)
   COMBO(grave,       &kp GRAVE,          28 29, ALL_LAYERS, COMBO_TERM_NORMAL)
   COMBO(tilde,       &kp TILDE,          27 29, ALL_LAYERS, COMBO_TERM_NORMAL)
-
-//  COMBO(shiftl,      &kp LSHIFT,         13 32, BASE NAV SYM SPECIAL, COMBO_TERM_NORMAL)
-//  COMBO(controll,    &kp LCTRL,          12 32, BASE NAV SYM SPECIAL, COMBO_TERM_NORMAL)
-//  COMBO(altl,        &kp LALT,           11 32, BASE NAV SYM SPECIAL, COMBO_TERM_NORMAL)
-//  COMBO(winl,        &kp LWIN,           10 32, BASE NAV SYM SPECIAL, COMBO_TERM_NORMAL)
-// 
-//  COMBO(shiftr,      &kp RSHIFT,         16 33, BASE NAV SYM SPECIAL, COMBO_TERM_NORMAL)
-//  COMBO(controlr,    &kp LCTRL,          17 33, BASE NAV SYM SPECIAL, COMBO_TERM_NORMAL)
-//  COMBO(altr,        &kp LALT,           18 33, BASE NAV SYM SPECIAL, COMBO_TERM_NORMAL)
-//  COMBO(winr,        &kp LWIN,           19 33, BASE NAV SYM SPECIAL, COMBO_TERM_NORMAL)
+  COMBO(shiftl,      &kp LSHIFT,         13 32, ALL_LAYERS, COMBO_TERM_NORMAL)
+  COMBO(controll,    &kp LCTRL,          12 32, ALL_LAYERS, COMBO_TERM_NORMAL)
+  COMBO(altl,        &kp LALT,           11 32, ALL_LAYERS, COMBO_TERM_NORMAL)
+  COMBO(winl,        &kp LWIN,           10 32, ALL_LAYERS, COMBO_TERM_NORMAL)
+  COMBO(shiftr,      &kp RSHIFT,         16 33, ALL_LAYERS, COMBO_TERM_NORMAL)
+  COMBO(controlr,    &kp LCTRL,          17 33, ALL_LAYERS, COMBO_TERM_NORMAL)
+  COMBO(altr,        &kp LALT,           18 33, ALL_LAYERS, COMBO_TERM_NORMAL)
+  COMBO(winr,        &kp LWIN,           19 33, ALL_LAYERS, COMBO_TERM_NORMAL)
  
 
 //  COMBO(q, &kp Q, 2 3, BASE APTHD APT326 NAV SYMBOLS, COMBO_TERM_NORMAL)

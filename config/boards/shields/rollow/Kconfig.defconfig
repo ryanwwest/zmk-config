@@ -1,23 +1,17 @@
-if SHIELD_ROLLOW_LEFT
+if SHIELD_ROLLOW_LEFT || SHIELD_DONGLE
 
 config ZMK_KEYBOARD_NAME
-	default "Rollow"
+	default "Rollow Dongle"
 
-config ZMK_SPLIT_BLE_ROLE_CENTRAL
-	default y
+config ZMK_SPLIT_ROLE_CENTRAL
+    default y
+
+config ZMK_USB
+    default y
 
 endif
 
-if SHIELD_ROLLOW_RIGHT
-
-config ZMK_KEYBOARD_NAME
-	default "Rollow Right"
-	
-endif
-
-if SHIELD_ROLLOW_LEFT || SHIELD_ROLLOW_RIGHT
+if  SHIELD_ROLLOW_LEFT || SHIELD_ROLLOW_RIGHT || SHIELD_DONGLE || SHIELD_ROLLOW_PERIPHERAL_LEFT
 
 config ZMK_SPLIT
-	default y
- 
-endif
+    default y

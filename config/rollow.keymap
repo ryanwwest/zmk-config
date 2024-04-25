@@ -12,7 +12,7 @@
 
 #define MAIN    0
 #define NAV     1
-#define SYMBOLS 2
+#define SYM     2
 #define SPECIAL 3
 
 

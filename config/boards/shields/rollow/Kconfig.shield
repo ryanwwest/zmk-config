@@ -2,7 +2,7 @@
 # SPDX-License-Identifier: MIT
 
 config SHIELD_ROLLOW_LEFT
-    def_bool $(shields_list_contains,rollow_left)
+	def_bool $(shields_list_contains,rollow_left)
 
 config SHIELD_ROLLOW_RIGHT
-    def_bool $(shields_list_contains,rollow_right)
+	def_bool $(shields_list_contains,rollow_right)

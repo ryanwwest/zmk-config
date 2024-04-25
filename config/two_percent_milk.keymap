@@ -1,0 +1,37 @@
+/*
+ * Copyright (c) 2022 The ZMK Contributors
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+ #include <behaviors.dtsi>
+ #include <dt-bindings/zmk/keys.h>
+ #include <dt-bindings/zmk/bt.h>
+ 
+ / {
+
+    #define COMBO(NAME, BINDINGS, KEYPOS, LAYERS, MS) \
+      combo_##NAME { \
+        bindings = <BINDINGS>; \
+        key-positions = <KEYPOS>; \
+        layers = <LAYERS>; \
+        timeout-ms = <MS>; \
+      };
+
+    combos {
+      compatible = "zmk,combos";
+
+      COMBO(U, &kp U, 0 1, 0, 15)
+    }; 
+
+     keymap {
+         compatible = "zmk,keymap";
+ 
+         default_layer {
+             bindings = <
+              &kp RIGHT
+              &kp Z
+             >;
+         };
+     };
+ };

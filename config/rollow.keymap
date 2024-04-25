@@ -35,7 +35,7 @@
   quick-release;
 };
 
- {
+ /{
   #include "36key_combos.dtsi"
   
   chosen {

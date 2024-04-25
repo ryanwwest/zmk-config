@@ -10,7 +10,7 @@
 #include <dt-bindings/zmk/ext_power.h>
 #include <dt-bindings/zmk/outputs.h>
 
-#define BASE    0
+#define MAIN    0
 #define NAV     1
 #define SYMBOLS 2
 #define SPECIAL 3
@@ -59,7 +59,7 @@
   keymap {
       compatible = "zmk,keymap";
 
-      default_layer {
+      MAIN {
 /* Default
  * -----------------------------------.                    .-----------------------------------
  * |   Q  |   W  |   E  |   R  |   T  |                    |   Y  |   U  |   I  |   O  |   P  |
@@ -79,37 +79,32 @@
             &kp Q      &kp W      &kp E       &kp R        &kp T                &kp Y     &kp U        &kp I           &kp O        &kp P
             &kp A      &kp S      &kp D       &kp F        &kp G                &kp H     &kp J        &kp K           &kp L        &kp SEMI      
             &kp Z      &kp X      &kp C       &kp V        &kp B                &kp N     &kp M        &kp COMMA       &kp DOT      &kp FSLH
-                                   &mo NAV      &mo NAV    &mt LSHIFT        BSPC  &kp SPACE &mo SYMBOLS  &mo SYMBOLS
+                            &mt K_PLAY_PAUSE   &mo NAV    &mt LSHIFT        BSPC  &kp SPACE &mo SYM  &mo SYM
             >;
                         sensor-bindings = <&inc_dec_kp DOWN UP &inc_dec_kp RIGHT LEFT>;
         };
-                nav_layer {
+                NAV {
                         bindings = <
           &none    &none       &none     &none      &none               &kp HOME     &kp PG_DN    &kp PG_UP  &kp END       &none
           &none    &none       &none     &none      &none               &kp LEFT     &kp DOWN     &kp UP     &kp RIGHT     &none
           &kp LGUI &kp LALT    &kp LCTRL &kp LSHIFT &none               &kp LC(LEFT) &kp LC(DOWN) &kp LC(UP) &kp LC(RIGHT) &none        
-                                      &trans       &trans  &trans   &trans  &mo BT       &trans
+                                      &trans       &trans  &trans   &trans  &mo SPECIAL   &trans
                             >;
 
                             sensor-bindings = <&inc_dec_kp PG_UP PG_DN &inc_dec_kp RIGHT LEFT>;
                 };
-                symbols_layer {
+                SYM {
                         bindings = <
-      &kp   ESCAPE &kp  PERCENT &kp    QMARK &kp    COLON &kp       AT                   &kp    CARET &kp     SEMI &kp     LPAR &kp     RPAR &kp    TILDE
-      &kp     EXCL &kp     PLUS &kp    MINUS &kp    EQUAL &kp     HASH                   &kp    UNDER &sk   LSHIFT &sk    LCTRL &sk     LALT &sk     LGUI
-      &kp    GRAVE &kp   DOLLAR &kp ASTERISK &kp    SLASH &kp     AMPS                   &kp     PIPE &kp     BSLH &kp     LBRC &kp     RBRC &kp    GRAVE
-                                             &trans       &trans     &trans  &mo SPECIAL &trans   &trans
-
       &kp LPAR  &kp AMPS  &kp STAR   &kp TILDE  &kp RBRC                  &kp EQUAL  &kp N7 &kp N8 &kp N9 &kp DOT
       &kp LBRC  &kp EXCL  &kp AT     &kp HASH   &kp RPAR                  &kp PLUS   &kp N1 &kp N2 &kp N3 &kp N0
       &kp LBKT  &kp DLLR  &kp PRCNT  &kp CARET  &kp RBKT                  &kp PIPE   &kp N4 &kp N5 &kp N6 &kp BSLH 
-                                                  &mo BT &trans       &trans &trans
+                                  &trans       &mo SPECIAL     &trans    &trans &trans   &trans
                         >;
    
                         sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp RIGHT LEFT>;
                 };
 
-                special_layer {
+                SPECIAL {
                         bindings = <
 //      &bootloader  &sys_reset   &none        &to   APT326 &to     BASE                   &out OUT_USB &out OUT_BLE &none        &sys_reset   &bootloader
 //      &none        &kp   C_MUTE &kp C_VOL_DN &kp C_VOL_UP &to    APTHD                   &bt   BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3

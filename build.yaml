@@ -13,12 +13,13 @@
 #
 ---
 include:
-  - board: nice_nano_v2
-    shield: rollow_left
+# uncomment if want full left master
+#  - board: nice_nano_v2
+#    shield: rollow_left
   - board: nice_nano_v2
     shield: rollow_right
-  - board: nice_nano_v2
-    shield: settings_reset
+  - board: seeeduino_xiao_ble
+    shield: settings_reset  
 
     # Add custom dongle and a peripheral left corne
   - board: seeeduino_xiao_ble

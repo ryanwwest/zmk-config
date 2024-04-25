@@ -1,5 +1,8 @@
 if SHIELD_ROLLOW_LEFT || SHIELD_DONGLE
 
+CONFIG_ZMK_USB_LOGGING=y
+
+
 config ZMK_KEYBOARD_NAME
 	default "Rollow Dongle"
 

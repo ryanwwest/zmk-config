@@ -98,6 +98,13 @@
      &kp C_PREV &kp LEFT   &kp DOWN     &kp UP       &kp RIGHT  &kp LC(TAB)        &kp PSCRN &kp F1  &kp F2 &kp F3 &kp F10 &kp F12
                 &kp HOME   &kp PG_DN    &kp PG_UP    &kp END    &kp LS(LC(TAB))    &kp CAPS  &kp F4  &kp F5 &kp F6 &kp F11
                                                      &none      &none              &trans    &kp DEL
+
+          &none    &none       &none     &none      &none               &kp HOME     &kp PG_DN    &kp PG_UP  &kp END       &none
+          &none    &none       &none     &none      &none               &kp LEFT     &kp DOWN     &kp UP     &kp RIGHT     &none
+          &kp LGUI &kp LALT    &kp LCTRL &kp LSHIFT &none               &kp LC(LEFT) &kp LC(DOWN) &kp LC(UP) &kp LC(RIGHT) &none        
+                                         &trans      &trans        &trans    &mo BT
+
+
             >;
         };
 
@@ -107,7 +114,6 @@
           &none &none &none &none &none &none    &none &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &none
                 &none &none &none &none &none    &none &bt BT_CLR   &none        &none        &none
                                   &none &none    &none &none
-            >;
-        };
+            >; };
     };
 };

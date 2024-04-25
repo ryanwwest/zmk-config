@@ -3,6 +3,7 @@ if SHIELD_ROLLOW_LEFT || SHIELD_DONGLE
 config ZMK_KEYBOARD_NAME
 	default "Rollow Dongle"
 
+# Another version (https://github.com/tomgroenwoldt/zmk-config/blob/master/config/boards/shields/corne/Kconfig.defconfig) uses ZMK_SPLIT_ROLE_CENTRAL instead and removes ZMK_BLE from below. That didn't work for connecting them in this config, so I'm not sure how that worked for them. But this has the side effect that you can potentially pair to it as BT device despite never wanting that with USB.
 config ZMK_SPLIT_BLE_ROLE_CENTRAL
 	default y
 

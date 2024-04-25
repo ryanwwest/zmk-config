@@ -11,15 +11,9 @@
 #include <dt-bindings/zmk/outputs.h>
 
 #define BASE    0
-#define APTHD   1
-#define GAME    2
-#define APT326  3
-#define NAV     4
-#define SYMBOLS 5
-#define NUMBERS 6
-#define NUMPAD  7
-#define FKEYS   8
-#define SPECIAL 9
+#define NAV     1
+#define SYMBOLS 2
+#define SPECIAL 3
 
 
 #define LAUNCHER (LG(TAB))
@@ -54,13 +48,13 @@
       label = "VBATT";
   };
 
-  conditional_layers {
-      compatible = "zmk,conditional-layers";
-      tri_layer {
-          if-layers = <NAV SYMBOLS>;
-          then-layer = <NUMBERS>;
-      };
-  };
+//  conditional_layers {
+//      compatible = "zmk,conditional-layers";
+//      tri_layer {
+//          if-layers = <NAV SYMBOLS>;
+//          then-layer = <NUMBERS>;
+//      };
+//  };
 
   keymap {
       compatible = "zmk,keymap";
@@ -74,7 +68,7 @@
  * +------+------+------+------+------|                    |------+------+------+------+------+
  * |   Z  |   X  |   C  |   V  |   B  |-------.    .-------|   N  |   M  |   ,  |   .  |   /  |
  * -----------------------------------/       /     \      \-----------------------------------
- *                   |  GUI |  LWR | / Space /       \ Space\  |TT(RS)| Tab  |
+ *                   |      |      | /       /       \      \  |      |      |
  *                   |      |      |/       /         \      \ |      |      |
  *                   '-------------''------'           '------''-------------'
  *
@@ -89,112 +83,16 @@
             >;
                         sensor-bindings = <&inc_dec_kp DOWN UP &inc_dec_kp RIGHT LEFT>;
         };
-
-
-                apthd_layer {
-/* APTHD
- * .-----------------------------------------.                    .-----------------------------------------.
- * | TAB  |   Q  |   W  |   E  |   R  |   T  |                    |   Y  |   U  |   I  |   O  |   P  | BKSP |
- * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
- * | CTRL |   A  |   S  |   D  |   F  |   G  |                    |   H  |   J  |   K  |   L  |   ;  |   '  |
- * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
- * | SHFT |   Z  |   X  |   C  |   V  |   B  |-------.    .-------|   N  |   M  |   ,  |   .  |   /  | SHFT |
- * '-----------------------------------------/       /     \      \-----------------------------------------'
- *                          |  GUI |  LWR | / Space /       \ Space\  |TT(RS)| Tab  |
- *                          |      |      |/       /         \      \ |      |      |
- *                          '-------------''------'           '------''-------------'
- *
- *   Encoder Left: Up <-> Down
- *   Encoder Right: Left <-> Right
- */
-                        bindings = <
-  &kp        W &kp        F &kp        Y &kp        P &kp        B                   &kp        Q &kp        L &kp        O &kp        U &kp     APOS
-  &kp        R &kp        S &kp        T &kp        H &kp        K                   &kp        J &kp        N &kp        E &kp        I &kp        A
-  &kp        X &kp        C &kp        G &kp        D &kp        V                   &kp        Z &kp        M &key_repeat  &kp    COMMA &kp   PERIOD
-                                         &mo      NAV &mo    NAV &kp SPACE &mo SYMBOLS &sk  LSHFT &mo  SYMBOLS
-                        >;
-
-                        sensor-bindings = <&inc_dec_kp DOWN UP &inc_dec_kp RIGHT LEFT>;
-                };
-
-                game_layer {
-/* Game
- * .-----------------------------------------.                    .-----------------------------------------.
- * | TAB  |   Q  |   W  |   E  |   R  |   T  |                    |   Y  |   U  |   I  |   O  |   P  | BKSP |
- * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
- * | CTRL |   A  |   S  |   D  |   F  |   G  |                    |   H  |   J  |   K  |   L  |   ;  |   '  |
- * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
- * | SHFT |   Z  |   X  |   C  |   V  |   B  |-------.    .-------|   N  |   M  |   ,  |   .  |   /  | SHFT |
- * '-----------------------------------------/       /     \      \-----------------------------------------'
- *                          |  GUI |  LWR | / Space /       \ Space\  |TT(RS)| Tab  |
- *                          |      |      |/       /         \      \ |      |      |
- *                          '-------------''------'           '------''-------------'
- *
- *   Encoder Left: Up <-> Down
- *   Encoder Right: Left <-> Right
- */
-                        bindings = <
-  &kp        T &kp        Q &kp        W &kp        E &kp        R                   &kp        Y &kp        U &kp        I &kp        O &kp        P
-  &kp    LSHFT &kp        A &kp        S &kp        D &kp        F                   &kp        H &kp        J &kp        A &kp        I &kp     APOS
-  &kp    LCTRL &kp        Z &kp        X &kp        C &kp        V                   &kp        N &kp        M &kp    COMMA &kp   PERIOD &key_repeat
-                                         &mo      NAV &mo    NAV &kp SPACE &mo SYMBOLS &kp  LSHFT &mo  SYMBOLS
-                        >;
-
-                        sensor-bindings = <&inc_dec_kp DOWN UP &inc_dec_kp RIGHT LEFT>;
-                };
-
-                APT326_layer {
-/* APT326
- * .-----------------------------------------.                    .-----------------------------------------.
- * | TAB  |   Q  |   W  |   E  |   R  |   T  |                    |   Y  |   U  |   I  |   O  |   P  | BKSP |
- * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
- * | CTRL |   A  |   S  |   D  |   F  |   G  |                    |   H  |   J  |   K  |   L  |   ;  |   '  |
- * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
- * | SHFT |   Z  |   X  |   C  |   V  |   B  |-------.    .-------|   N  |   M  |   ,  |   .  |   /  | SHFT |
- * '-----------------------------------------/       /     \      \-----------------------------------------'
- *                          |  GUI |  LWR | / Space /       \ Space\  |TT(RS)| Tab  |
- *                          |      |      |/       /         \      \ |      |      |
- *                          '-------------''------'           '------''-------------'
- *
- *   Encoder Left: Up <-> Down
- *   Encoder Right: Left <-> Right
- */
-                        bindings = <
-      &kp        W &kp        C &kp        D &kp        F &kp        B                 &kp        J &kp        L &kp        U &kp        O &kp        Y
-      &kp        R &kp        S &kp        T &kp        H &kp        K                 &kp        X &kp        N &kp        E &kp        A &kp        I
-      &key_repeat  &kp        V &kp        G &kp        P &kp        Q                 &kp        Z &kp        M &kp    COMMA &kp   PERIOD &key_repeat
-                                &none        &mo      NAV &kp    SPACE                 &kp     APOS &mo  SYMBOLS &mo      NAV
-                        >;
-
-                        sensor-bindings = <&inc_dec_kp DOWN UP &inc_dec_kp RIGHT LEFT>;
-                };
-
                 nav_layer {
-/* NAV
- * .-----------------------------------------.                    .-----------------------------------------.
- * |  ESC |   1  |  2   |  3   |  4   |  5   |                    |   6  |   7  |   8  |   9  |   0  | BKSP |
- * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
- * | BTCLR| BT1  | BT2  | BT3  | BT4  | BT5  |                    |  LFT |  DWN |   UP |  RGT |      |      |
- * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
- * | SHFT |      |      |      |      |      |-------.    .-------|      |      |      |      |      |      |
- * '-----------------------------------------/       /     \      \-----------------------------------------'
- *                          |  GUI |      | / Space /       \ Enter\  |      |  ALT |
- *                          |      |      |/       /         \      \ |      |      |
- *                          '-------------''------'           '------''-------------'
- * 
- *   Encoder Left: PG_UP <-> PG_DN
- *   Encoder Right: -
- */
                         bindings = <
-      &kp    S_PRV &kp  C_S_TAB &kp      TAB &kp CTRL_TAB &kp    S_NXT                   &kp    PG_UP &kp     HOME &kp       UP &kp      END &kp      DEL
-      &sk     LGUI &sk     LALT &sk    LCTRL &sk    LSHFT &kp SCRNSHOT                   &kp    PG_DN &kp     LEFT &kp     DOWN &kp    RIGHT &kp    ENTER
-      &kp    LC(Z) &kp    LC(X) &kp    LC(C) &kp    LC(V) &kp    LC(A)                   &none        &kp     BSPC &trans       &trans       &trans
-                                             &trans       &trans  &mo  SPECIAL   &trans  &trans       &trans
+          &none    &none       &none     &none      &none               &kp HOME     &kp PG_DN    &kp PG_UP  &kp END       &none
+          &none    &none       &none     &none      &none               &kp LEFT     &kp DOWN     &kp UP     &kp RIGHT     &none
+          &kp LGUI &kp LALT    &kp LCTRL &kp LSHIFT &none               &kp LC(LEFT) &kp LC(DOWN) &kp LC(UP) &kp LC(RIGHT) &none        
+                                      &trans       &trans  &trans   &trans  &mo BT       &trans
                             >;
 
                             sensor-bindings = <&inc_dec_kp PG_UP PG_DN &inc_dec_kp RIGHT LEFT>;
                 };
-
                 symbols_layer {
 /* SYMBOLS
  * .-----------------------------------------.                    .-----------------------------------------.
@@ -216,109 +114,26 @@
       &kp     EXCL &kp     PLUS &kp    MINUS &kp    EQUAL &kp     HASH                   &kp    UNDER &sk   LSHIFT &sk    LCTRL &sk     LALT &sk     LGUI
       &kp    GRAVE &kp   DOLLAR &kp ASTERISK &kp    SLASH &kp     AMPS                   &kp     PIPE &kp     BSLH &kp     LBRC &kp     RBRC &kp    GRAVE
                                              &trans       &trans     &trans  &mo SPECIAL &trans   &trans
+
+      &kp LPAR  &kp AMPS  &kp STAR   &kp TILDE  &kp RBRC                  &kp EQUAL  &kp N7 &kp N8 &kp N9 &kp DOT
+      &kp LBRC  &kp EXCL  &kp AT     &kp HASH   &kp RPAR                  &kp PLUS   &kp N1 &kp N2 &kp N3 &kp N0
+      &kp LBKT  &kp DLLR  &kp PRCNT  &kp CARET  &kp RBKT                  &kp PIPE   &kp N4 &kp N5 &kp N6 &kp BSLH 
+                                                  &mo BT &trans       &trans &trans
                         >;
    
                         sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp RIGHT LEFT>;
                 };
- 
-                 numbers_layer {
-/* NUMBERS
- * .-----------------------------------------.                    .-----------------------------------------.
- * | ESC  |   !  |   @  |   #  |   $  |   %  |                    |   ^  |   &  |   *  |   (  |   )  | BKSP |
- * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
- * | CTRL |      |      | Prev | Next |      |                    |   -  |   =  |   {  |   }  |  "|" |   `  |
- * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
- * | SHFT |      |      |      |      |      |-------.    .-------|   _  |   +  |   [  |   ]  |   \  |   ~  |
- * '-----------------------------------------/       /     \      \-----------------------------------------'
- *                          | Play |      | / Space /       \ Enter\  |      |  ALT |
- *                          | Paus |      |/       /         \      \ |      |      |
- *                          '------------''------'            '------''-------------'
- *
- *   Encoder Left: -
- *   Encoder Right: VOL_UP <-> VOL_D
- */
-                        bindings = <
-      &kp    SLASH &kp       N7 &kp       N8 &kp       N9 &kp ASTERISK                   &none        &kp    EQUAL &kp       LT &kp GT       &none
-      &kp    MINUS &kp       N4 &kp       N5 &kp       N6 &kp     PLUS                   &none        &sk   LSHIFT &sk    LCTRL &sk    LALT  &sk     LGUI
-      &kp      DOT &kp       N1 &kp       N2 &kp       N3 &kp    COMMA                   &none        &kp       N0 &kp     LBKT &kp     RBKT &none
-                                             &trans       &trans       &trans    &trans  &trans       &trans
-                        >;
-
-                        sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp RIGHT LEFT>;
-                };
-
-                 numpad_layer {
-/* NUMPAD
- * .-----------------------------------------.                    .-----------------------------------------.
- * | ESC  |   !  |   @  |   #  |   $  |   %  |                    |   ^  |   &  |   *  |   (  |   )  | BKSP |
- * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
- * | CTRL |      |      | Prev | Next |      |                    |   -  |   =  |   {  |   }  |  "|" |   `  |
- * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
- * | SHFT |      |      |      |      |      |-------.    .-------|   _  |   +  |   [  |   ]  |   \  |   ~  |
- * '-----------------------------------------/       /     \      \-----------------------------------------'
- *                          | Play |      | / Space /       \ Enter\  |      |  ALT |
- *                          | Paus |      |/       /         \      \ |      |      |
- *                          '------------''------'            '------''-------------'
- *
- *   Encoder Left: -
- *   Encoder Right: VOL_UP <-> VOL_D
- */
-                        bindings = <
-      &none        &kp       N7 &kp       N8 &kp       N9 &none                          &kp KP_ASTERISK &kp    KP_N7 &kp    KP_N8 &kp    KP_N9 &kp KP_MINUS
-      &mt LGUI MINUS &mt  LALT N4 &mt  LCTRL N5 &mt LSHFT N6 &kp   PLUS                  &kp    KP_SLASH &kp    KP_N4 &kp    KP_N5 &kp    KP_N6 &kp  KP_PLUS
-      &kp      DOT &kp       N1 &kp       N2 &kp       N3 &kp       N0                   &kp       KP_N0 &kp    KP_N1 &kp    KP_N2 &kp    KP_N3 &kp   KP_DOT
-                                             &trans       &trans       &trans  &kp KP_N0 &kp KP_DOT      &trans
-                        >;
-
-                        sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp RIGHT LEFT>;
-                };
-
-                 fkeys_layer {
-/* F-KEYS
- * .-----------------------------------------.                    .-----------------------------------------.
- * | ESC  |   !  |   @  |   #  |   $  |   %  |                    |   ^  |   &  |   *  |   (  |   )  | BKSP |
- * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
- * | CTRL |      |      | Prev | Next |      |                    |   -  |   =  |   {  |   }  |  "|" |   `  |
- * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
- * | SHFT |      |      |      |      |      |-------.    .-------|   _  |   +  |   [  |   ]  |   \  |   ~  |
- * '-----------------------------------------/       /     \      \-----------------------------------------'
- *                          | Play |      | / Space /       \ Enter\  |      |  ALT |
- *                          | Paus |      |/       /         \      \ |      |      |
- *                          '------------''------'            '------''-------------'
- *
- *   Encoder Left: -
- *   Encoder Right: VOL_UP <-> VOL_D
- */
-                        bindings = <
-      &kp      F12 &kp       F7 &kp       F8 &kp       F9 &kp     CAPS                   &kp KP_NUM   &kp      INS &kp    PSCRN &kp     SLCK &kp PAUSE_BREAK
-      &kp      F11 &kp       F4 &kp       F5 &kp       F6 &kp    K_APP                   &none        &sk    LSHFT &sk    LCTRL &sk     LALT &sk     LGUI
-      &kp      F10 &kp       F1 &kp       F2 &kp       F3 &none                          &none        &none        &none        &none        &none
-                                             &trans       &trans       &trans    &trans  &trans       &trans
-                        >;
-
-                        sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp RIGHT LEFT>;
-                };
 
                 special_layer {
-/* SPECIAL
- * .-----------------------------------------.                    .-----------------------------------------.
- * | ESC  |   !  |   @  |   #  |   $  |   %  |                    |   ^  |   &  |   *  |   (  |   )  | BKSP |
- * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
- * | CTRL |      |      | Prev | Next |      |                    |   -  |   =  |   {  |   }  |  "|" |   `  |
- * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
- * | SHFT |      |      |      |      |      |-------.    .-------|   _  |   +  |   [  |   ]  |   \  |   ~  |
- * '-----------------------------------------/       /     \      \-----------------------------------------'
- *                          | Play |      | / Space /       \ Enter\  |      |  ALT |
- *                          | Paus |      |/       /         \      \ |      |      |
- *                          '------------''------'            '------''-------------'
- *
- *   Encoder Left: -
- *   Encoder Right: VOL_UP <-> VOL_D
- */
                         bindings = <
-      &bootloader  &sys_reset   &none        &to   APT326 &to     BASE                   &out OUT_USB &out OUT_BLE &none        &sys_reset   &bootloader
-      &none        &kp   C_MUTE &kp C_VOL_DN &kp C_VOL_UP &to    APTHD                   &bt   BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3
-      &none        &kp     C_PP &kp C_BRI_DN &kp C_BRI_UP &to     GAME                   &none        &none        &none        &none        &none
+//      &bootloader  &sys_reset   &none        &to   APT326 &to     BASE                   &out OUT_USB &out OUT_BLE &none        &sys_reset   &bootloader
+//      &none        &kp   C_MUTE &kp C_VOL_DN &kp C_VOL_UP &to    APTHD                   &bt   BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3
+//      &none        &kp     C_PP &kp C_BRI_DN &kp C_BRI_UP &to     GAME                   &none        &none        &none        &none        &none
+
+
+                &bootloader  &none        &none        &none        &none                &none  &kp F7  &kp F8 &kp F9 &kp F12
+                &none        &none        &none        &none        &none                &none  &kp F1  &kp F2 &kp F3 &kp F10
+                &kp LGUI     &kp LALT     &kp LCTRL    &kp LSHIFT   &none                &none  &kp F4  &kp F5 &kp F6 &kp F11
                                              &trans       &trans       &trans    &trans  &trans       &trans
                         >;
    

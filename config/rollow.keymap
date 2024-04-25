@@ -82,8 +82,8 @@
  *   Encoder Right: Left <-> Right
  */
         bindings = <
-            &kp Q      &kp W      &kp E       &kp R        &kp T                &kp Y     &kp U        &kp I           &kp O
-            &kp A      &kp S      &kp D       &kp F        &kp G                &kp H     &kp J        &kp K           &kp L        &kp SEMI       &kp P
+            &kp Q      &kp W      &kp E       &kp R        &kp T                &kp Y     &kp U        &kp I           &kp O        &kp P
+            &kp A      &kp S      &kp D       &kp F        &kp G                &kp H     &kp J        &kp K           &kp L        &kp SEMI      
             &mt LGUI Z  &mt LALT X &mt LCTRL C &mt LSHIFT V &kp B               &kp N     &mt RSHIFT M &mt RCTRL COMMA &mt RALT DOT &mt RGUI FSLH
                                    &mo NAV      &mo NAV    &mt LSHIFT        BSPC  &kp SPACE &mo SYMBOLS  &mo SYMBOLS
             >;

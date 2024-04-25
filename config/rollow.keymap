@@ -78,7 +78,7 @@
         bindings = <
             &kp Q      &kp W      &kp E       &kp R        &kp T                &kp Y     &kp U        &kp I           &kp O        &kp P
             &kp A      &kp S      &kp D       &kp F        &kp G                &kp H     &kp J        &kp K           &kp L        &kp SEMI      
-            &mt LGUI Z  &mt LALT X &mt LCTRL C &mt LSHIFT V &kp B               &kp N     &mt RSHIFT M &mt RCTRL COMMA &mt RALT DOT &mt RGUI FSLH
+            &kp Z      &kp X      &kp C       &kp V        &kp B                &kp N     &kp M        &kp COMMA       &kp DOT      &kp FSLH
                                    &mo NAV      &mo NAV    &mt LSHIFT        BSPC  &kp SPACE &mo SYMBOLS  &mo SYMBOLS
             >;
                         sensor-bindings = <&inc_dec_kp DOWN UP &inc_dec_kp RIGHT LEFT>;
@@ -94,21 +94,6 @@
                             sensor-bindings = <&inc_dec_kp PG_UP PG_DN &inc_dec_kp RIGHT LEFT>;
                 };
                 symbols_layer {
-/* SYMBOLS
- * .-----------------------------------------.                    .-----------------------------------------.
- * | ESC  |   !  |   @  |   #  |   $  |   %  |                    |   ^  |   &  |   *  |   (  |   )  | BKSP |
- * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
- * | CTRL |      |      | Prev | Next |      |                    |   -  |   =  |   {  |   }  |  "|" |   `  |
- * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
- * | SHFT |      |      |      |      |      |-------.    .-------|   _  |   +  |   [  |   ]  |   \  |   ~  |
- * '-----------------------------------------/       /     \      \-----------------------------------------'
- *                          | Play |      | / Space /       \ Enter\  |      |  ALT |
- *                          | Paus |      |/       /         \      \ |      |      |
- *                          '------------''------'            '------''-------------'
- *
- *   Encoder Left: -
- *   Encoder Right: VOL_UP <-> VOL_D
- */
                         bindings = <
       &kp   ESCAPE &kp  PERCENT &kp    QMARK &kp    COLON &kp       AT                   &kp    CARET &kp     SEMI &kp     LPAR &kp     RPAR &kp    TILDE
       &kp     EXCL &kp     PLUS &kp    MINUS &kp    EQUAL &kp     HASH                   &kp    UNDER &sk   LSHIFT &sk    LCTRL &sk     LALT &sk     LGUI

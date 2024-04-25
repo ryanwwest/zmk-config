@@ -95,8 +95,8 @@
                 };
                 SYM {
                         bindings = <
-      &kp LPAR  &kp AMPS  &kp STAR   &kp TILDE  &kp RBRC                  &kp EQUAL  &kp N7 &kp N8 &kp N9 &kp DOT
-      &kp LBRC  &kp EXCL  &kp AT     &kp HASH   &kp RPAR                  &kp PLUS   &kp N1 &kp N2 &kp N3 &kp N0
+      &kp LBRC  &kp AMPS  &kp STAR   &kp TILDE  &kp RBRC                  &kp EQUAL  &kp N7 &kp N8 &kp N9 &kp DOT
+      &kp LPAR  &kp EXCL  &kp AT     &kp HASH   &kp RPAR                  &kp PLUS   &kp N1 &kp N2 &kp N3 &kp N0
       &kp LBKT  &kp DLLR  &kp PRCNT  &kp CARET  &kp RBKT                  &kp PIPE   &kp N4 &kp N5 &kp N6 &kp BSLH 
                                   &trans       &mo SPECIAL     &trans    &trans &trans   &trans
                         >;

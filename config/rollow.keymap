@@ -35,6 +35,8 @@
   quick-release;
 };
 
+ &mt { quick_tap_ms = <200>; };
+
  /{
   #include "36key_combos.dtsi"
   
@@ -55,6 +57,8 @@
 //          then-layer = <NUMBERS>;
 //      };
 //  };
+
+
 
   keymap {
       compatible = "zmk,keymap";

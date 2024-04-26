@@ -29,7 +29,7 @@ combos {
   COMBO(dash,        &kp MINUS,          16 17, ALL_LAYERS, COMBO_TERM_NORMAL)
   COMBO(underscore,  &kp UNDERSCORE,     16 18, ALL_LAYERS, COMBO_TERM_NORMAL)
   COMBO(singlequote, &kp SQT,            18 19, ALL_LAYERS, COMBO_TERM_NORMAL)
-  COMBO(semicolon,   &kp SEMICOLON,      17 19, ALL_LAYERS, COMBO_TERM_NORMAL)
+  COMBO(doublequote, &kp DQT,            17 19, ALL_LAYERS, COMBO_TERM_NORMAL)
   COMBO(grave,       &kp GRAVE,          28 29, ALL_LAYERS, COMBO_TERM_NORMAL)
   COMBO(tilde,       &kp TILDE,          27 29, ALL_LAYERS, COMBO_TERM_NORMAL)
   COMBO(shiftl,      &kp LSHIFT,         13 32, ALL_LAYERS, COMBO_TERM_NORMAL)
